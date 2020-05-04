@@ -1,4 +1,4 @@
-# javascript-developer-recruitment-task
+# Angular weather
 
 Create an Angular APP using weather API (https://openweathermap.org/current).
 
