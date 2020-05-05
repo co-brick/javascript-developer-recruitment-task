@@ -1,4 +1,9 @@
 .city-card{
   margin-top: 12px;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  & > span {
+    flex-grow: 1;
+  }
 }

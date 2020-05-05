@@ -1,3 +1,4 @@
 <mat-card class="city-card">
-  {{city.name}}
+  <span>{{city.name}}</span>
+  <mat-checkbox [formControl]="isFav"></mat-checkbox>
 </mat-card>
