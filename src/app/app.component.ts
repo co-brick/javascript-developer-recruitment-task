@@ -14,7 +14,7 @@ import { City } from './core/models/City';
 })
 export class AppComponent implements OnInit {
   title = 'weather-app';
-  cities: City[] = []
+  cities: City[] = [];
   cityNameValue = new FormControl();
   constructor(
     private apiService: ApiService,
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   fetchCities(cityName: string) {
     this.apiService.findCities(cityName).subscribe((cities) => {
       console.log(cities);
-      this.cities = cities
+      this.cities = cities;
     });
   }
   ngOnInit(): void {

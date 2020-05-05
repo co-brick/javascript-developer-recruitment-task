@@ -6,24 +6,23 @@ import { FavoriteCitiesService } from 'src/app/core/favorite-cities/favorite-cit
 @Component({
   selector: 'city-card',
   templateUrl: './city-card.component.html',
-  styleUrls: ['./city-card.component.scss']
+  styleUrls: ['./city-card.component.scss'],
 })
 export class CityCardComponent implements OnInit {
-  @Input() city: City
+  @Input() city: City;
   isFav = new FormControl();
-  constructor(private favoriteCitiesService: FavoriteCitiesService) { }
+  constructor(private favoriteCitiesService: FavoriteCitiesService) {}
 
   ngOnInit(): void {
-    const isChecked: boolean = this.favoriteCitiesService.isFavorite(this.city)
-    console.log(isChecked)
-    this.isFav.setValue(this.favoriteCitiesService.isFavorite(this.city))
+    const isChecked: boolean = this.favoriteCitiesService.isFavorite(this.city);
+    console.log(isChecked);
+    this.isFav.setValue(this.favoriteCitiesService.isFavorite(this.city));
     this.observeCheckChange();
   }
 
   observeCheckChange(): void {
-    this.isFav.valueChanges.subscribe(change=>{
-      this.favoriteCitiesService.toggleCity(this.city)
-    })
+    this.isFav.valueChanges.subscribe((change) => {
+      this.favoriteCitiesService.toggleCity(this.city);
+    });
   }
-
 }
