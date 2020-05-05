@@ -1,6 +1,13 @@
-
- <mat-form-field class="example-full-width">
+<mat-form-field class="example-full-width">
   <mat-label>Favorite food</mat-label>
-  <input matInput placeholder="Ex. Pizza" value="Sushi">
+  <input
+    matInput
+    placeholder="Ex. Pizza"
+    value="Sushi"
+    [formControl]="cityNameValue"
+  />
 </mat-form-field>
+<div *ngIf="loaderService.loading$() | async">
+  <mat-spinner [diameter]="20"></mat-spinner>
+</div>
 <router-outlet></router-outlet>
