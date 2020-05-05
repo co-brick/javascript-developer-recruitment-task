@@ -1,0 +1,12 @@
+<div>
+  <p>Dashboard</p>
+
+  <div class="card-container">
+    <city-weather-card *ngFor="let city of favoriteCities" [city]="city">
+    </city-weather-card>
+  </div>
+
+  <a mat-fab routerLink="/search">
+    <mat-icon>search</mat-icon>
+  </a>
+</div>

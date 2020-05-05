@@ -13,11 +13,22 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 import { CityCardComponent } from './shared/city-card/city-card.component';
 import { CityListComponent } from './shared/city-list/city-list.component';
+import { DashboardPage } from './dashboard/page/dashboard.page';
+import { CityWeatherCardComponent } from './dashboard/components/city-weather-card/city-weather-card.component';
 
 @NgModule({
-  declarations: [AppComponent, CityCardComponent, CityListComponent],
+  declarations: [
+    AppComponent,
+    CityCardComponent,
+    CityListComponent,
+    DashboardPage,
+    CityWeatherCardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,6 +41,8 @@ import { CityListComponent } from './shared/city-list/city-list.component';
     MatProgressSpinnerModule,
     MatCardModule,
     MatCheckboxModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

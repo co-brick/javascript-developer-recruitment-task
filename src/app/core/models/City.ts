@@ -1,4 +1,5 @@
 export interface City {
   id: Number,
-  name: string
+  name: string,
+  basicWeather: BasicWeather
 }

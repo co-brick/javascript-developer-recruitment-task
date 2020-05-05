@@ -37,7 +37,6 @@ export class ApiService {
       .pipe(
         catchError((error: any) => {
           this.loaderService.setIsLoading(false);
-          console.log(typeof error);
           if (error.cod === 400) {
             return of({ list: [] } as SearchCitiesResponse);
           }

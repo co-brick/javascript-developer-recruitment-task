@@ -14,8 +14,6 @@ export class CityCardComponent implements OnInit {
   constructor(private favoriteCitiesService: FavoriteCitiesService) {}
 
   ngOnInit(): void {
-    const isChecked: boolean = this.favoriteCitiesService.isFavorite(this.city);
-    console.log(isChecked);
     this.isFav.setValue(this.favoriteCitiesService.isFavorite(this.city));
     this.observeCheckChange();
   }

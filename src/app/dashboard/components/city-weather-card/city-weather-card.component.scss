@@ -1,0 +1,35 @@
+.city-weather-card {
+  width: 300px;
+  margin: 8px;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__label {
+    margin-bottom: 24px;
+    margin-top: 24px;
+    color: hsl(0, 0%, 67%);
+  }
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  &__field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    & > h2 {
+      font-size: 72px;
+      color: #333333;
+    }
+    & > h4 {
+      font-size: 24px;
+      color: #888888;
+    }
+    & > p:nth-child(2){
+      font-size: 14px;
+    }
+  }
+}

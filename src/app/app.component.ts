@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
   ) {}
   fetchCities(cityName: string) {
     this.apiService.findCities(cityName).subscribe((cities) => {
-      console.log(cities);
       this.cities = cities;
     });
   }
@@ -30,7 +29,6 @@ export class AppComponent implements OnInit {
     this.cityNameValue.valueChanges
       .pipe(debounce(() => timer(600)))
       .subscribe((cityName) => {
-        console.log(cityName);
         this.fetchCities(cityName);
       });
   }

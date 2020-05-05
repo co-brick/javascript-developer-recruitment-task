@@ -1,0 +1,23 @@
+<mat-card class="city-weather-card">
+  <div class="city-weather-card__title">
+    <h1>{{ city.name }}</h1>
+    <button mat-button color="primary" (click)="removeFromFav()"><mat-icon>delete</mat-icon></button>
+  </div>
+  <div class="city-weather-card__field">
+    <p class="city-weather-card__label">Temperature</p>
+    <h2>{{ city.basicWeather.temperature }}°C</h2>
+  </div>
+  <div class="city-weather-card__row">
+    <div class="city-weather-card__field">
+      <p class="city-weather-card__label">Humidity</p>
+      <h4>{{ city.basicWeather.humidity }}%</h4>
+    </div>
+    <div class="city-weather-card__field">
+      <p class="city-weather-card__label">Humidity</p>
+      <p>
+        {{ city.basicWeather.shortDescription }} -
+        {{ city.basicWeather.description }}
+      </p>
+    </div>
+  </div>
+</mat-card>
