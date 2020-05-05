@@ -14,15 +14,15 @@ import { SearchCitiesResponse } from '../models/SearchCitiesResponse';
 export class ApiService {
   callParams = {
     appId: environment.apiId,
-    units: 'metric'
-  }
+    units: 'metric',
+  };
 
   constructor(private http: HttpClient, private loaderService: LoaderService) {}
 
-  formatErrors = (error:any) => {
+  formatErrors = (error: any) => {
     this.loaderService.setIsLoading(false);
     return throwError(error.error);
-  }
+  };
 
   findCities(cityQury: string): Observable<City[]> {
     this.loaderService.setIsLoading(true);
@@ -31,22 +31,22 @@ export class ApiService {
         reportProgress: true,
         params: {
           ...this.callParams,
-          q: cityQury
+          q: cityQury,
         },
       })
       .pipe(
-        catchError((error:any) => {
+        catchError((error: any) => {
           this.loaderService.setIsLoading(false);
-          console.log(typeof error)
-          if(error.cod === 400){
-            return of({list: []} as SearchCitiesResponse)
+          console.log(typeof error);
+          if (error.cod === 400) {
+            return of({ list: [] } as SearchCitiesResponse);
           }
-          return throwError(error.error)
+          return throwError(error.error);
         }),
         tap((_searchCities) => {
           this.loaderService.setIsLoading(false);
         }),
-        map(searchCities => searchCities.list)
+        map((searchCities) => searchCities.list)
       );
   }
 }
