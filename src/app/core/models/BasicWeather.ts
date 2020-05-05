@@ -1,4 +1,4 @@
-interface BasicWeather{
+export interface BasicWeather{
   temperature: Number,
   humidity: Number,
   description: string,

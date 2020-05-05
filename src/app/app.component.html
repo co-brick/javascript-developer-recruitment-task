@@ -1,13 +1,1 @@
-<mat-form-field>
-  <mat-label>Favorite food</mat-label>
-  <input
-    matInput
-    placeholder="Start typing city name"
-    [formControl]="cityNameValue"
-  />
-</mat-form-field>
-<div *ngIf="loaderService.loading$() | async">
-  <mat-spinner [diameter]="20"></mat-spinner>
-</div>
-<city-list [cities]="cities"></city-list>
 <router-outlet></router-outlet>
