@@ -1,32 +1,27 @@
-# Angular weather
+# WeatherApp
 
-Create an Angular APP using weather API (https://openweathermap.org/current).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
-Tech stack:
-* Angular
+## Development server
 
-Features requirements:
-* Possibility to search for a city using name
-* Add cities to favorites
-* Create a dashboard like screen to view all cities that are added to favorites. Data displayed on dashboard should be basic (temperature/humidity/weather description) 
-    * Add option to sort displayed favorite cities by name 
-    * Add filter ability to displayed cities
-* Create a detail screen for displaying City weather (current + 5 days forecast) with detailed data. 
-    * On this screen present as many data as possible 
-* Preserve favorite cities in local storage
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-You can use UI library of choice. If you use one please share why you have chosen this one.
-If you need an Icon pack use https://fontawesome.com/how-to-use/on-the-web/using-with/angular
+## Code scaffolding
 
-Put your implementation on your GitHub. Fork this repo and share us a link when you think the task is ready for review.
-Feel free add a comment on what was the biggest issue during this task. 
-If you can't made it on time, please share us the most recent version and tell us what is missing and why you couldn't finish.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Build
 
-_Good luck!_
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-_co.brick team_
+## Running unit tests
 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running end-to-end tests
 
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
