@@ -8,10 +8,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { MatCardModule } from '@angular/material/card';
+import { CityCardComponent } from './shared/city-card/city-card.component';
+import { CityListComponent } from './shared/city-list/city-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CityCardComponent, CityListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +26,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

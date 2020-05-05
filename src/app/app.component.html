@@ -1,4 +1,4 @@
-<mat-form-field class="example-full-width">
+<mat-form-field>
   <mat-label>Favorite food</mat-label>
   <input
     matInput
@@ -10,4 +10,5 @@
 <div *ngIf="loaderService.loading$() | async">
   <mat-spinner [diameter]="20"></mat-spinner>
 </div>
+<city-list [cities]="cities"></city-list>
 <router-outlet></router-outlet>

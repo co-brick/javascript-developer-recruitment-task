@@ -5,6 +5,7 @@ import { ApiService } from './core/api/api.service';
 import { FormControl } from '@angular/forms';
 import { debounce } from 'rxjs/operators';
 import { LoaderService } from './core/loader/loader.service';
+import { City } from './core/models/City';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,16 @@ import { LoaderService } from './core/loader/loader.service';
 })
 export class AppComponent implements OnInit {
   title = 'weather-app';
+  cities: City[] = []
   cityNameValue = new FormControl();
   constructor(
     private apiService: ApiService,
     public loaderService: LoaderService
   ) {}
   fetchCities(cityName: string) {
-    this.apiService.findCities(cityName).subscribe((result) => {
-      console.log(result);
+    this.apiService.findCities(cityName).subscribe((cities) => {
+      console.log(cities);
+      this.cities = cities
     });
   }
   ngOnInit(): void {

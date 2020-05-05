@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Observable, throwError, of } from 'rxjs';
+import { catchError, tap, map } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
 import { LoaderService } from '../loader/loader.service';
+import { City } from '../models/City';
+import { SearchCitiesResponse } from '../models/SearchCitiesResponse';
 
 @Injectable({
   providedIn: 'root',
@@ -22,10 +24,10 @@ export class ApiService {
     return throwError(error.error);
   }
 
-  findCities(cityQury: string): Observable<any> {
+  findCities(cityQury: string): Observable<City[]> {
     this.loaderService.setIsLoading(true);
     return this.http
-      .get(`${environment.apiUrl}/find`, {
+      .get<SearchCitiesResponse>(`${environment.apiUrl}/find`, {
         reportProgress: true,
         params: {
           ...this.callParams,
@@ -33,10 +35,18 @@ export class ApiService {
         },
       })
       .pipe(
-        catchError(this.formatErrors),
-        tap((_x) => {
+        catchError((error:any) => {
           this.loaderService.setIsLoading(false);
-        })
+          console.log(typeof error)
+          if(error.cod === 400){
+            return of({list: []} as SearchCitiesResponse)
+          }
+          return throwError(error.error)
+        }),
+        tap((_searchCities) => {
+          this.loaderService.setIsLoading(false);
+        }),
+        map(searchCities => searchCities.list)
       );
   }
 }

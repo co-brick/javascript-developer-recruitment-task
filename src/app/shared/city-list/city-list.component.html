@@ -1,0 +1,9 @@
+<div *ngIf="cities.length else noData" class="cities__list">
+  <div *ngFor="let city of cities">
+    <city-card [city]="city"></city-card>
+  </div>
+</div>
+
+<ng-template #noData>
+  <div class="cities__placeholder">No results</div>
+ </ng-template>
