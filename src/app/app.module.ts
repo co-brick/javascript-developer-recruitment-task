@@ -15,8 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { CityCardComponent } from './shared/city-card/city-card.component';
-import { CityListComponent } from './shared/city-list/city-list.component';
+import { CityCardComponent } from './search/components/city-card/city-card.component';
+import { CityListComponent } from './search/components/city-list/city-list.component';
 import { CityWeatherCardComponent } from './dashboard/components/city-weather-card/city-weather-card.component';
 import { DashboardPage } from './dashboard/page/dashboard.page';
 import { SearchCityPage } from './search/page/search-city.page';
