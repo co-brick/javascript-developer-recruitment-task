@@ -19,7 +19,7 @@ export class CityCardComponent implements OnInit {
   }
 
   observeCheckChange(): void {
-    this.isFav.valueChanges.subscribe((change) => {
+    this.isFav.valueChanges.subscribe((_change) => {
       this.favoriteCitiesService.toggleCity(this.city);
     });
   }

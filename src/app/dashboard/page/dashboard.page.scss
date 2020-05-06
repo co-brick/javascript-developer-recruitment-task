@@ -1,5 +1,18 @@
-.card-container{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.dashboard {
+  &__btn-fab {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+  }
+  &__filters {
+    & > span {
+      margin-left: 64px;
+      margin-right: 16px;
+    }
+  }
+  &__card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }

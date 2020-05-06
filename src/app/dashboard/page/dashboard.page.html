@@ -1,12 +1,23 @@
-<div>
+<div class="dashboard">
   <p>Dashboard</p>
-
-  <div class="card-container">
+  <div class="dashboard__filters">
+    <mat-form-field>
+      <mat-label>City name</mat-label>
+      <input
+        matInput
+        placeholder="Start typing city name"
+        [formControl]="query"
+      />
+    </mat-form-field>
+    <span>Sort by name</span>
+    <mat-checkbox [formControl]="sortByName"></mat-checkbox>
+  </div>
+  <div class="dashboard__card-container">
     <city-weather-card *ngFor="let city of favoriteCities" [city]="city">
     </city-weather-card>
   </div>
 
-  <a mat-fab routerLink="/search">
+  <a mat-fab routerLink="/search" class="dashboard__btn-fab">
     <mat-icon>search</mat-icon>
   </a>
 </div>
