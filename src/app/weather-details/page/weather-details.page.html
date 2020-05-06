@@ -1,79 +1,13 @@
 <div class="weather-details">
   <mat-card *ngIf="city" class="weather-details__card">
     <h1>{{city.name}}</h1>
-    <div class="weather-details__field">
-      <p>Temperature</p>
-      <h2>{{city.basicWeather.temperature}}</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Humidity</p>
-      <h2>{{city.basicWeather.humidity}}%</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Humidity</p>
-      <h2>
-        {{city.basicWeather.shortDescription}} -
-        {{city.basicWeather.description}}
-      </h2>
-    </div>
-    <div class="weather-details__field" *ngIf="city.extendedWeather.clouds">
-      <p>Clouds</p>
-      <h2>{{city.extendedWeather.clouds}}%</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Pressure</p>
-      <h2>{{city.extendedWeather.pressure}} mhPa</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Wind speed</p>
-      <h2>{{city.extendedWeather.windSpeed}} m/s</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Wind degree</p>
-      <h2>{{city.extendedWeather.windDegree}}°</h2>
-    </div>
+    <forecast-card [forecast]="currentWeather"></forecast-card>
   </mat-card>
-  <mat-card *ngFor="let forecast of forecasts" class="weather-details__forecast">
-    <h3>{{forecast.date}}</h3>
-    <div class="weather-details__field">
-      <p>Wind degree</p>
-      <h2>{{city.extendedWeather.windDegree}}°</h2>
-    </div>
-    <div class="weather-details__field" *ngIf="forecast.clouds">
-      <p>Clouds</p>
-      <h2>{{forecast.clouds}}%</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Temperature</p>
-      <h2>{{forecast.temperature}}</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Humidity</p>
-      <h2>{{forecast.humidity}}%</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Humidity</p>
-      <h2>
-        {{forecast.shortDescription}} -
-        {{forecast.description}}
-      </h2>
-    </div>
-    <div class="weather-details__field" *ngIf="forecast.clouds">
-      <p>Clouds</p>
-      <h2>{{forecast.clouds}}%</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Pressure</p>
-      <h2>{{forecast.pressure}} mhPa</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Wind speed</p>
-      <h2>{{forecast.windSpeed}} m/s</h2>
-    </div>
-    <div class="weather-details__field">
-      <p>Wind degree</p>
-      <h2>{{forecast.windDegree}}°</h2>
-    </div>
+  <mat-card
+    *ngFor="let forecast of forecasts"
+    class="weather-details__forecast"
+  >
+    <forecast-card [forecast]="forecast"> </forecast-card>
   </mat-card>
   <div *ngIf="loaderService.loading$() | async">
     <mat-spinner [diameter]="20"></mat-spinner>

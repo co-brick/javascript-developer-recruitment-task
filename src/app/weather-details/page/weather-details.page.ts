@@ -28,4 +28,8 @@ export class WeatherDetailsPage implements OnInit {
       this.forecasts = forecasts.slice(0,5);
     });
   }
+
+  get currentWeather():Forecast {
+    return {...this.city.basicWeather, ...this.city.extendedWeather, date: null}
+  }
 }

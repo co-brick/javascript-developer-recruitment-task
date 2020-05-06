@@ -21,6 +21,8 @@ import { CityWeatherCardComponent } from './dashboard/components/city-weather-ca
 import { DashboardPage } from './dashboard/page/dashboard.page';
 import { SearchCityPage } from './search/page/search-city.page';
 import { WeatherDetailsPage } from './weather-details/page/weather-details.page';
+import { ForecastCardComponent } from './weather-details/components/forecast-card/forecast-card.component';
+import { ParameterFieldComponent } from './weather-details/components/parameter-field/parameter-field.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { WeatherDetailsPage } from './weather-details/page/weather-details.page'
     CityWeatherCardComponent,
     SearchCityPage,
     WeatherDetailsPage,
+    ForecastCardComponent,
+    ParameterFieldComponent,
   ],
   imports: [
     BrowserModule,

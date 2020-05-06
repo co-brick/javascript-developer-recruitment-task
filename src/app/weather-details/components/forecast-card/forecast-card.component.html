@@ -1,0 +1,32 @@
+<div class="forecast">
+  <h3 *ngIf="forecast.date">{{ forecast.date }}</h3>
+  <parameter-field
+    [parameter]="formattedTemperature"
+    label="Temperature"
+  ></parameter-field>
+  <parameter-field
+    [parameter]="formattedHumidity"
+    label="Humidity"
+  ></parameter-field>
+  <parameter-field
+    [parameter]="formattedDescription"
+    label="Description"
+  ></parameter-field>
+  <parameter-field
+    *ngIf="formattedClouds"
+    [parameter]="formattedClouds"
+    label="Clouds"
+  ></parameter-field>
+  <parameter-field
+    [parameter]="formattedWindDegree"
+    label="Wind degree"
+  ></parameter-field>
+  <parameter-field
+    [parameter]="formattedPressure"
+    label="Pressure"
+  ></parameter-field>
+  <parameter-field
+    [parameter]="formattedWindSpeed"
+    label="Wind speed"
+  ></parameter-field>
+</div>

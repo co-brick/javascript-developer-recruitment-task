@@ -13,5 +13,5 @@ export interface Weather {
 }
 
 export interface Forecast extends Weather, BasicWeather {
-  date: string
+  date: string | null
 }

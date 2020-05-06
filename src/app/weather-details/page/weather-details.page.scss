@@ -7,14 +7,6 @@ $card-width: 500px;
   &__card {
     width: $card-width;
   }
-  &__field {
-    & > p {
-      color: #999999;
-    }
-    & > h2 {
-      color: #333333;
-    }
-  }
   &__forecast {
     width: $card-width;
     margin-top: 16px;
