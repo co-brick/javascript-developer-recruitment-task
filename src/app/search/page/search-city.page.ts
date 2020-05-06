@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, interval, timer } from 'rxjs';
 
-import { ApiService } from '../../core/api/api.service';
+import { ApiService } from '../../core/services/api/api.service';
 import { FormControl } from '@angular/forms';
 import { debounce } from 'rxjs/operators';
-import { LoaderService } from '../../core/loader/loader.service';
+import { LoaderService } from '../../core/services/loader/loader.service';
 import { City } from '../../core/models/City';
 
 @Component({

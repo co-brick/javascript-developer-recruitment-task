@@ -3,20 +3,19 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { LoaderService } from '../loader/loader.service';
-import { City } from '../models/City';
+import { City } from '../../models/City';
 import {
   SearchCitiesResponse,
   CityWeatherDetailsResponse,
   ApiForecastResponse,
-} from '../models/api';
+} from '../../models/api';
 import {
-  convertApiCityResponse,
   convertCityWeatherResponseToDetails,
   convertApiForecastResponseToForecast,
-} from '../models/mappsers';
-import { Forecast } from '../models/Weather';
+} from '../../models/mappsers';
+import { Forecast } from '../../models/Weather';
 
 @Injectable({
   providedIn: 'root',

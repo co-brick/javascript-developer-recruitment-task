@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from 'src/app/core/api/api.service';
+import { ApiService } from 'src/app/core/services/api/api.service';
 
 @Component({
   selector: 'weather-details',

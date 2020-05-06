@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { City } from '../models/City';
+import { City } from '../../models/City';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { convertStoredObjectToCity } from '../models/mappsers';
+import { convertStoredObjectToCity } from '../../models/mappsers';
 
 @Injectable({
   providedIn: 'root',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FavoriteCitiesService } from 'src/app/core/favorite-cities/favorite-cities.service';
+import { FavoriteCitiesService } from 'src/app/core/services/favorite-cities/favorite-cities.service';
 import { City } from 'src/app/core/models/City';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { City } from 'src/app/core/models/City';
 import { FormControl } from '@angular/forms';
-import { FavoriteCitiesService } from 'src/app/core/favorite-cities/favorite-cities.service';
+import { FavoriteCitiesService } from 'src/app/core/services/favorite-cities/favorite-cities.service';
 
 @Component({
   selector: 'city-card',
