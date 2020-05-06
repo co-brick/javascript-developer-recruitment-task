@@ -28,10 +28,10 @@ export class WeatherDetailsPage implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('cityId');
-    this.apiService.fetchCityById(id).subscribe((city) => {
+    this.fetchCitySubscription = this.apiService.fetchCityById(id).subscribe((city) => {
       this.city = city;
     });
-    this.apiService.fetchForecastForCity(id).subscribe((forecasts) => {
+    this.fetchForecastSubscription = this.apiService.fetchForecastForCity(id).subscribe((forecasts) => {
       this.forecasts = forecasts.slice(0, 5);
     });
   }
