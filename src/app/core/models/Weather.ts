@@ -8,8 +8,10 @@ export interface BasicWeather {
 export interface Weather {
   pressure: Number;
   windSpeed: Number;
-  clouds: Number;
+  clouds?: Number;
   windDegree: Number;
 }
 
-export interface Forecast extends Weather, BasicWeather {}
+export interface Forecast extends Weather, BasicWeather {
+  date: string
+}

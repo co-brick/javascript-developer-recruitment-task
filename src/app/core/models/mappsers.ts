@@ -43,6 +43,7 @@ export function convertApiForecastResponseToForecast(
   apiForecast: ApiForecast
 ): Forecast {
   return {
+    date: apiForecast.dt_txt,
     temperature: apiForecast.main.temp,
     humidity: apiForecast.main.humidity,
     description: apiForecast.weather[0].description,
@@ -50,6 +51,6 @@ export function convertApiForecastResponseToForecast(
     pressure: apiForecast.main.pressure,
     windSpeed: apiForecast.wind.speed,
     clouds: apiForecast.clouds.alt,
-    windDegree: apiForecast.wind.deg,
+    windDegree: apiForecast.wind.deg
   };
 }

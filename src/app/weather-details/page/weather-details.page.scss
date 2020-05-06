@@ -1,0 +1,23 @@
+$card-width: 500px;
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__card {
+    width: $card-width;
+  }
+  &__field {
+    & > p {
+      color: #999999;
+    }
+    & > h2 {
+      color: #333333;
+    }
+  }
+  &__forecast {
+    width: $card-width;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}

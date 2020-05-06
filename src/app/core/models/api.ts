@@ -28,7 +28,7 @@ export interface CityWeatherDetailsResponse {
 }
 
 export interface ApiForecast {
-  dt_txt: Number;
+  dt_txt: string;
   main: {
     temp: Number;
     pressure: Number;
