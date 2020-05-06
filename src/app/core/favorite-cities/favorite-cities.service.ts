@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { City } from '../models/City';
-import { Subject, Observable, BehaviorSubject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { convertStoredObjectToCity } from '../models/mappsers';
 
 @Injectable({
   providedIn: 'root',
@@ -38,25 +38,8 @@ export class FavoriteCitiesService {
     return this.favoriteCitiesSubj;
   }
 
-  private convertApiResponse(apiResponseObject: Object): City {
-    const main = apiResponseObject['main'];
-    const weather = apiResponseObject['weather'][0];
-    return {
-      id: apiResponseObject['id'] as Number,
-      name: apiResponseObject['name'] as string,
-      basicWeather: {
-        temperature: main['temp'] as Number,
-        humidity: main['humidity'] as Number,
-        shortDescription: weather['main'] as string,
-        description: weather['description'] as string,
-      },
-    };
-  }
-
   private convertToArray(data: Object): City[] {
-    return Object.entries(data).map(([, value]) =>
-      this.convertApiResponse(value)
-    );
+    return Object.entries(data).map(([, value]) => convertStoredObjectToCity(value));
   }
 
   private saveInLocalStore(favoriteCities: Object) {

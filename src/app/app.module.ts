@@ -20,6 +20,7 @@ import { CityListComponent } from './search/components/city-list/city-list.compo
 import { CityWeatherCardComponent } from './dashboard/components/city-weather-card/city-weather-card.component';
 import { DashboardPage } from './dashboard/page/dashboard.page';
 import { SearchCityPage } from './search/page/search-city.page';
+import { WeatherDetailsPage } from './weather-details/page/weather-details.page';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SearchCityPage } from './search/page/search-city.page';
     DashboardPage,
     CityWeatherCardComponent,
     SearchCityPage,
+    WeatherDetailsPage,
   ],
   imports: [
     BrowserModule,
