@@ -23,6 +23,7 @@ import { SearchCityPage } from './search/page/search-city.page';
 import { WeatherDetailsPage } from './weather-details/page/weather-details.page';
 import { ForecastCardComponent } from './weather-details/components/forecast-card/forecast-card.component';
 import { ParameterFieldComponent } from './weather-details/components/parameter-field/parameter-field.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ParameterFieldComponent } from './weather-details/components/parameter-
     WeatherDetailsPage,
     ForecastCardComponent,
     ParameterFieldComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

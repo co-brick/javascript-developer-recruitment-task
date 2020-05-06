@@ -3,6 +3,7 @@ import { City } from 'src/app/core/models/City';
 import { DashboardService } from '../dashboard.service';
 import { FormControl } from '@angular/forms';
 import { combineLatest, zip, Subscription } from 'rxjs';
+import { LoaderService } from 'src/app/core/services/loader/loader.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +18,8 @@ export class DashboardPage implements OnInit, OnDestroy {
   listSubscription: Subscription;
   constructor(private dashboardService: DashboardService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.dashboardService.updateFavorites();
     this.listSubscription = this.dashboardService
       .favoriteCities$()
       .subscribe((citiesList) => {

@@ -11,6 +11,7 @@
     </mat-form-field>
     <span>Sort by name</span>
     <mat-checkbox [formControl]="sortByName"></mat-checkbox>
+    <loader></loader>
   </div>
   <div class="dashboard__card-container">
     <city-weather-card *ngFor="let city of favoriteCities" [city]="city">
