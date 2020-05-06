@@ -54,6 +54,37 @@ export class ApiService {
       );
   }
 
+  fetchCityGroupByIds(ids: string[]): Observable<City[]> {
+    this.loaderService.setIsLoading(true);
+    const queryIds: string = ids.reduce((prev, next) => {
+      if (prev.length === 0) {
+        return next;
+      }
+      return `${prev}, ${next}`;
+    }, '');
+    return this.http
+      .get<SearchCitiesResponse>(`${environment.apiUrl}/group`, {
+        reportProgress: true,
+        params: {
+          ...this.callParams,
+          id: queryIds,
+        },
+      })
+      .pipe(
+        catchError((error: any) => {
+          this.loaderService.setIsLoading(false);
+          if (error.cod === 400) {
+            return of({ list: [] } as SearchCitiesResponse);
+          }
+          return throwError(error.error);
+        }),
+        tap((_searchCities) => {
+          this.loaderService.setIsLoading(false);
+        }),
+        map((searchCities) => searchCities.list)
+      );
+  }
+
   fetchCityById(id: string): Observable<City> {
     this.loaderService.setIsLoading(true);
     return this.http

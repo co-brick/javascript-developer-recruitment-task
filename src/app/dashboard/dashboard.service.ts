@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FavoriteCitiesService } from '../core/services/favorite-cities/favorite-cities.service';
 import { Observable, combineLatest, BehaviorSubject } from 'rxjs';
 import { City } from '../core/models/City';
+import { ApiService } from '../core/services/api/api.service';
 
 interface CityForm {
   sortByName: boolean | null;
@@ -16,7 +17,20 @@ export class DashboardService {
     sortByName: null,
     filterByQuery: null,
   });
-  constructor(private favoriteCitiesService: FavoriteCitiesService) {}
+  constructor(
+    private favoriteCitiesService: FavoriteCitiesService,
+    private apiService: ApiService
+  ) {}
+
+  async updateFavorites(): Promise<void> {
+    const favorites = this.favoriteCitiesService.getFavoriteCitiesArr();
+    if (favorites.length > 0) {
+      const updated = await this.apiService
+        .fetchCityGroupByIds(favorites.map((city) => city.id.toString()))
+        .toPromise();
+      this.favoriteCitiesService.saveCities(updated);
+    }
+  }
 
   sortAndFilter(cityForm: CityForm): void {
     this.formSubject.next(cityForm);

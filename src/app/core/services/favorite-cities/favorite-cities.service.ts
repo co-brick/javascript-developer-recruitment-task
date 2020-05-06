@@ -14,20 +14,25 @@ export class FavoriteCitiesService {
   constructor() {}
 
   toggleCity(city: City): void {
-    const favoriteCities = this.getFavoriteCities();
+    let favoriteCities = this.getFavoriteCities();
     const id = city.id.toString();
-    if (favoriteCities[id]) {
-      favoriteCities[id] = undefined;
-      delete favoriteCities[id];
-    } else {
-      favoriteCities[id] = city;
-    }
-    this.saveInLocalStore(favoriteCities);
-    this.favoriteCitiesSubj.next(this.convertToArray(favoriteCities));
+    const updatedFavorites = (() => {
+      if (favoriteCities[id]) {
+        return this.removeCity(city, favoriteCities);
+      } else {
+        return this.addCity(city, favoriteCities);
+      }
+    })();
+    this.saveInLocalStore(updatedFavorites);
+    this.favoriteCitiesSubj.next(this.convertToArray(updatedFavorites));
   }
 
   getFavoriteCities(): Object {
     return this.getSavedCities();
+  }
+
+  getFavoriteCitiesArr(): City[] {
+    return this.convertToArray(this.getFavoriteCities());
   }
 
   isFavorite(city: City): boolean {
@@ -38,8 +43,30 @@ export class FavoriteCitiesService {
     return this.favoriteCitiesSubj;
   }
 
+  saveCities(cities: City[]) {
+    let favoriteCities = this.getFavoriteCities();
+    cities.forEach((city) => {
+      favoriteCities = this.addCity(city, favoriteCities);
+    });
+    this.saveInLocalStore(favoriteCities);
+    this.favoriteCitiesSubj.next(this.convertToArray(favoriteCities));
+  }
+
+  private removeCity(city: City, citiesObj: Object) {
+    const result = { ...citiesObj };
+    delete result[city.id.toString()];
+    return result;
+  }
+
+  private addCity(city: City, favoriteCities: Object) {
+    const id = city.id.toString();
+    return { ...favoriteCities, [id]: city };
+  }
+
   private convertToArray(data: Object): City[] {
-    return Object.entries(data).map(([, value]) => convertStoredObjectToCity(value));
+    return Object.entries(data).map(([, value]) =>
+      convertStoredObjectToCity(value)
+    );
   }
 
   private saveInLocalStore(favoriteCities: Object) {
@@ -50,8 +77,12 @@ export class FavoriteCitiesService {
   }
 
   private getSavedCities(): Object {
+    const rawData = localStorage.getItem(FavoriteCitiesService.LOCAL_STORAGE)
+    if(!rawData || rawData === 'undefined'){
+      return {}
+    }
     return JSON.parse(
-      localStorage.getItem(FavoriteCitiesService.LOCAL_STORAGE) || '{}'
+      rawData
     );
   }
 }

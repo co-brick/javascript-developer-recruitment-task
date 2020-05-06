@@ -1,10 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BehaviorSubject, Observable, interval, timer, Subscription } from 'rxjs';
+import {
+  timer,
+  Subscription,
+} from 'rxjs';
 
 import { ApiService } from '../../core/services/api/api.service';
 import { FormControl } from '@angular/forms';
 import { debounce } from 'rxjs/operators';
-import { LoaderService } from '../../core/services/loader/loader.service';
 import { City } from '../../core/models/City';
 
 @Component({
@@ -16,10 +18,7 @@ export class SearchCityPage implements OnInit, OnDestroy {
   cities: City[] = [];
   cityNameValue = new FormControl();
   subscription: Subscription;
-  constructor(
-    private apiService: ApiService,
-    public loaderService: LoaderService
-  ) {}
+  constructor(private apiService: ApiService) {}
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api/api.service';
-import { LoaderService } from 'src/app/core/services/loader/loader.service';
 import { City } from 'src/app/core/models/City';
 import { Forecast } from 'src/app/core/models/Weather';
 import { Subscription } from 'rxjs';
@@ -18,8 +17,7 @@ export class WeatherDetailsPage implements OnInit, OnDestroy {
   fetchForecastSubscription: Subscription;
   constructor(
     private route: ActivatedRoute,
-    private apiService: ApiService,
-    public loaderService: LoaderService
+    private apiService: ApiService
   ) {}
   ngOnDestroy(): void {
     this.fetchCitySubscription.unsubscribe();
