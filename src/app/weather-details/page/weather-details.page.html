@@ -9,7 +9,5 @@
   >
     <forecast-card [forecast]="forecast"> </forecast-card>
   </mat-card>
-  <div *ngIf="loaderService.loading$() | async">
-    <mat-spinner [diameter]="20"></mat-spinner>
-  </div>
+  <loader></loader>
 </div>

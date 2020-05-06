@@ -6,7 +6,5 @@
     [formControl]="cityNameValue"
   />
 </mat-form-field>
-<div *ngIf="loaderService.loading$() | async">
-  <mat-spinner [diameter]="20"></mat-spinner>
-</div>
+<loader></loader>
 <city-list [cities]="cities"></city-list>
