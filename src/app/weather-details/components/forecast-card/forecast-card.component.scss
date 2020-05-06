@@ -1,3 +1,15 @@
-.forecast-card {
-  
+$row-width: 250px;
+$mobile: 750px;
+$tablet: 1000px;
+.forecast {
+  &__fields {
+    display: grid;
+    grid-template-columns: $row-width $row-width $row-width $row-width;
+    @media (max-width: $mobile) {
+      grid-template-columns: $row-width $row-width;
+    }
+    @media (min-width: $mobile) and (max-width: $tablet) {
+      grid-template-columns: $row-width $row-width $row-width;
+    }
+  }
 }

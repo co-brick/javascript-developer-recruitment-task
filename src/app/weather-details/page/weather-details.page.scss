@@ -1,13 +1,17 @@
-$card-width: 500px;
+$card-max-width: 1000px;
+$card-width: 100%;
 .weather-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   &__card {
-    width: $card-width;
+     max-width: $card-max-width;
+     width: $card-width;
   }
   &__forecast {
+    max-width: $card-max-width;
     width: $card-width;
     margin-top: 16px;
     margin-bottom: 16px;
