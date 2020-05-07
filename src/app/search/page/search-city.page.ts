@@ -1,13 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import {
-  timer,
-  Subscription,
-} from 'rxjs';
-
-import { ApiService } from '../../core/services/api/api.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Subscription, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
+
 import { City } from '../../core/models/City';
+import { ApiService } from '../../core/services/api/api.service';
 
 @Component({
   selector: 'search-city',

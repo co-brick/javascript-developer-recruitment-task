@@ -16,6 +16,17 @@ describe('ForecastCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ForecastCardComponent);
     component = fixture.componentInstance;
+    component.forecast = {
+      date: null,
+      temperature: 20,
+      humidity: 20,
+      description: 'mostly windy',
+      shortDescription: 'windy',
+      pressure: 1023,
+      windSpeed: 12,
+      clouds: 12,
+      windDegree: 120
+    }
     fixture.detectChanges();
   });
 

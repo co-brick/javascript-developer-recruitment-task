@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { City } from 'src/app/core/models/City';
 import { FavoriteCitiesService } from 'src/app/core/services/favorite-cities/favorite-cities.service';
 
