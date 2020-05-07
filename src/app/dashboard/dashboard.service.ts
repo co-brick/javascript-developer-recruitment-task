@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { FavoriteCitiesService } from '../core/services/favorite-cities/favorite-cities.service';
-import { Observable, combineLatest, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+
 import { City } from '../core/models/City';
 import { ApiService } from '../core/services/api/api.service';
+import { FavoriteCitiesService } from '../core/services/favorite-cities/favorite-cities.service';
 
 interface CityForm {
   sortByName: boolean | null;
@@ -23,7 +24,7 @@ export class DashboardService {
   ) {}
 
   async updateFavorites(): Promise<void> {
-    const favorites = this.favoriteCitiesService.getFavoriteCitiesArr();
+    const favorites = this.favoriteCitiesService.getFavouriteCitiesArr();
     if (favorites.length > 0) {
       const updated = await this.apiService
         .fetchCityGroupByIds(favorites.map((city) => city.id.toString()))
