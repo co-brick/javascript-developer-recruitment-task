@@ -4,7 +4,7 @@
 Your main goal is to develop a Weather App that provides accurate weather information to users. To get started, here's what we're looking for:
 
 
-- **API**: Utilise the weather data from the OpenWeatherMap API.
+- **API**: Utilise the weather data from the [OpenWeatherMap](https://openweathermap.org/current) API.
 - **Framework**: You're free to choose a framework for building the app. React is a great choice, but feel free to use any other framework you're comfortable with. Remember to support your code with TypeScript for that extra layer of awesomeness.
 - **Dashboard**: Create a clean dashboard where users can view the basic weather information (temperature, humidity, weather description) of the cities they've added to their favourites.
 - **City Search**: Users should be able to search for weather information by entering the name of a city.
