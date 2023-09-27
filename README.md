@@ -1,32 +1,26 @@
-# javascript-developer-recruitment-task
+# JavaScript developer recruitment task
 
-Create an Angular APP using weather API (https://openweathermap.org/current).
+## Requirements
+Your main goal is to develop a Weather App that provides accurate weather information to users. To get started, here's what we're looking for:
 
-Tech stack:
-* Angular
 
-Features requirements:
-* Possibility to search for a city using name
-* Add cities to favorites
-* Create a dashboard like screen to view all cities that are added to favorites. Data displayed on dashboard should be basic (temperature/humidity/weather description) 
-    * Add option to sort displayed favorite cities by name 
-    * Add filter ability to displayed cities
-* Create a detail screen for displaying City weather (current + 5 days forecast) with detailed data. 
-    * On this screen present as many data as possible 
-* Preserve favorite cities in local storage
+- **API**: Utilise the weather data from the OpenWeatherMap API.
+- **Framework**: You're free to choose a framework for building the app. React is a great choice, but feel free to use any other framework you're comfortable with. Remember to support your code with TypeScript for that extra layer of awesomeness.
+- **Dashboard**: Create a clean dashboard where users can view the basic weather information (temperature, humidity, weather description) of the cities they've added to their favourites.
+- **City Search**: Users should be able to search for weather information by entering the name of a city.
+- **Favourites**: Implement a feature that allows users to mark cities as favourites.
+- **Sorting**: Provide an option to sort the displayed favourite cities by their names.
+- **Filtering**: Add the ability to filter and display specific cities.
+- **Detailed Weather**: Design a detailed screen to display comprehensive weather information for a chosen city, including the current weather and a 5-day forecast.
 
-You can use UI library of choice. If you use one please share why you have chosen this one.
-If you need an Icon pack use https://fontawesome.com/how-to-use/on-the-web/using-with/angular
+## Guidelines
+- **UI Library**: Feel free to choose a UI library that you're comfortable with. Whether it's Tailwind, MaterialUI, or another, just let us know why you've picked it.
+- **GitHub**: Put your amazing implementation on GitHub and share the repository link with our HR team.
+- **Deployment**: Deploy your app using Static Web Hosting. Include the deployment link in the README.md file in your repository.
+- **Commentary**: If you encounter any challenges along the way, please add a comment detailing the biggest issue.
 
-Put your implementation on your GitHub. Fork this repo and share us a link when you think the task is ready for review.
-Feel free add a comment on what was the biggest issue during this task. 
-If you can't made it on time, please share us the most recent version and tell us what is missing and why you couldn't finish.
-
+If you can't make it on time, please share the most recent version with us and tell us what is missing and why you couldn't finish.
 
 _Good luck!_
 
 _co.brick team_
-
-
-
-
